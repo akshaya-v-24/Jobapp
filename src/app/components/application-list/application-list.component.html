@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Job Applications</h2>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Application ID</th>
+          <th>Job ID</th>
+          <th>Job Seeker ID</th>
+          <th>Resume</th>
+          <th>Cover Letter</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let application of applications">
+          <td>{{ application.id }}</td>
+          <td>{{ application.job.id }}</td>
+          <td>{{ application.jobSeeker.id }}</td>
+          <td>{{ application.resume }}</td>
+          <td>{{ application.coverLetter }}</td>
+          <td>{{ application.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

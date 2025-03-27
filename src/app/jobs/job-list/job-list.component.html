@@ -1,0 +1,49 @@
+<div class="container">
+  <h2>Job Listings</h2>
+
+  <!-- Search and Filter -->
+  <div class="filter-section">
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      placeholder="Search by job title"
+      (input)="filterJobs()"
+      class="search-input"
+    />
+
+    <select [(ngModel)]="jobTypeFilter" (change)="filterJobs()" class="filter-select">
+      <option value="">All Types</option>
+      <option value="Full-time">Full-time</option>
+      <option value="Part-time">Part-time</option>
+      <option value="Contract">Contract</option>
+    </select>
+
+    <!-- New Location Filter -->
+    <select [(ngModel)]="locationFilter" (change)="filterJobs()" class="filter-select">
+      <option value="">All Locations</option>
+      <option *ngFor="let location of uniqueLocations" [value]="location">{{ location }}</option>
+    </select>
+  </div>
+
+  <!-- Job List -->
+  <div *ngFor="let job of filteredJobs" class="job-card">
+    <h3>{{ job.title }}</h3>
+    <p><strong>Company:</strong> {{ job.company }}</p>
+    <p><strong>Location:</strong> {{ job.location }}</p>
+    <p><strong>Type:</strong> {{ job.jobType }}</p>
+    <p><strong>Salary:</strong> ${{ job.salary }}</p>
+    <p>{{ job.description }}</p>
+
+    <!-- Apply Now Button -->
+    <button class="btn btn-primary" (click)="openApplicationForm(job.id)">Apply Now</button>
+  </div>
+
+  <!-- Job Application Modal -->
+  <div *ngIf="showApplicationForm" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeApplicationForm()">&times;</span>
+      <h3>Apply for Job</h3>
+      <app-job-application *ngIf="selectedJobId !== null" [jobId]="selectedJobId!"></app-job-application>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<nav>
+    <ul>
+      <li><a [routerLink]="['/jobs']">Job Listings</a></li>
+  
+      <li *ngIf="isJobSeeker()"><a [routerLink]="['/job-seeker-dashboard']">Dashboard</a></li>
+      <li *ngIf="isJobSeeker()"><a [routerLink]="['/applications']">My Applications</a></li>
+  
+      <li *ngIf="isEmployer()"><a [routerLink]="['/employer-dashboard']">Employer Dashboard</a></li>
+  
+      <li *ngIf="!isLoggedIn()"><a [routerLink]="['/login']">Login</a></li>
+      <li *ngIf="!isLoggedIn()"><a [routerLink]="['/register']">Register</a></li>
+  
+      <li *ngIf="isLoggedIn()">
+        <a href="javascript:void(0)" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </nav>
+  
