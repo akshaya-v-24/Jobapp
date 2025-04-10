@@ -1,0 +1,24 @@
+<h2>My Applications</h2>
+<table class="table">
+  <tr>
+    <th>Job Title</th>
+    <th>Company</th>
+    <th>Job Type</th>
+    <th>Location</th>
+    <th>Salary</th>
+    <th>Status</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let app of applications">
+    <td>{{ app.job.title }}</td>         <!-- Job Title -->
+    <td>{{ app.job.company }}</td>       <!-- Company Name -->
+    <td>{{ app.job.jobType }}</td>       <!-- Job Type -->
+    <td>{{ app.job.location }}</td>      <!-- Job Location -->
+    <td>{{ app.job.salary | currency }}</td> <!-- Salary, formatted as currency -->
+    <td>{{ app.status }}</td> 
+    <td> 
+      <!-- Delete button calls deleteApplication method passing the application id -->
+      <button (click)="deleteApplication(app.id)">Withdraw</button>
+    </td>
+  </tr>
+</table>

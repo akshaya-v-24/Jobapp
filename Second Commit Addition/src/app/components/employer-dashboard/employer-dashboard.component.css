@@ -1,0 +1,143 @@
+/* Heading */
+h2 {
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 25px;
+    font-weight: bold;
+  }
+  
+  /* Create Button Wrapper */
+  .create-btn-wrapper {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  
+  /* Table Wrapper */
+  .table-wrapper {
+    overflow-x: auto;
+  }
+  
+  /* Styled Table */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #112240;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #d4af37;
+  }
+  
+  .styled-table thead {
+    background-color: #0d223f;
+    color: #d4af37;
+  }
+  
+  /* Action Buttons */
+  .btn-primary {
+    background-color: #d4af37;
+    color: #0a192f;
+    border: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #f0c94d;
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #d4af37;
+    color: #0a192f;
+  }
+  
+  .btn-danger {
+    background-color: #b22222;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .btn-danger:hover {
+    background-color: #ff4c4c;
+  }
+  
+  /* Responsive Table */
+  @media (max-width: 768px) {
+    .styled-table thead {
+      display: none;
+    }
+  
+    .styled-table tr {
+      display: block;
+      margin-bottom: 15px;
+    }
+  
+    .styled-table td {
+      display: block;
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+    }
+  
+    .styled-table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 16px;
+      width: 50%;
+      padding-right: 10px;
+      font-weight: bold;
+      color: #d4af37;
+      text-align: left;
+    }
+  }
+  
+  /* Center the Create New Job button */
+.create-btn-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Create New Job button style */
+  .create-btn {
+    background-color: #0a192f;
+    /* //color: #0a192f; */
+    color: #d4af37;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .create-btn:hover {
+    background-color: #0a192f;
+    transform: scale(1.05);
+  }
+  

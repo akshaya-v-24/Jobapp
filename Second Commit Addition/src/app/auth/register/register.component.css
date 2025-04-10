@@ -1,0 +1,79 @@
+/* /* Font Awesome fix */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+/* Container Styling */
+.container {
+  background-color: #0a192f;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 50px auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+}
+
+/* Heading */
+.container h2 {
+  color: #d4af37;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-top: 18px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Inputs & Dropdown */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #d4af37;
+  border-radius: 5px;
+  background-color: #1e2a3a;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 0 6px #d4af37;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  width: 100%;
+  background-color: #d4af37;
+  color: #0a192f;
+  padding: 12px;
+  font-weight: bold;
+  margin-top: 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #c9a232;
+  cursor: pointer;
+}
+
+/* Error Message */
+p {
+  margin-top: 15px;
+  color: #ff4d4f;
+  text-align: center;
+}
+
+/* Icons */
+label i {
+  margin-right: 8px;
+  color: #d4af37;
+}
+ 

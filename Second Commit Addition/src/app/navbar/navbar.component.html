@@ -1,0 +1,95 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary custom-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" [routerLink]="['/']">
+      <img src="https://i.pinimg.com/originals/19/dc/d9/19dcd90431952a077b648e2d79f22d1e.jpg" alt="Logo" />
+      Job Portal
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+
+        <!-- Not logged in -->
+        <ng-container *ngIf="!isLoggedIn()">
+          <li class="nav-item"><a class="nav-link nav-hover" [routerLink]="['/login']">Login</a></li>
+          <li class="nav-item"><a class="nav-link nav-hover" [routerLink]="['/register']">Register</a></li>
+        </ng-container>
+
+        <!-- Job Seeker -->
+        <ng-container *ngIf="isLoggedIn() && isJobSeeker()">
+          <li class="nav-item"><a class="nav-link nav-hover" [routerLink]="['/job-seeker/profile']">Profile</a></li>
+          <li class="nav-item"><a class="nav-link nav-hover" [routerLink]="['/job-seeker/jobs']">Jobs</a></li>
+          <li class="nav-item"><a class="nav-link nav-hover" [routerLink]="['/job-seeker/status']">Applications</a></li>
+          <li class="nav-item notification-wrapper" (click)="toggleDropdown()">
+            🔔
+            <span *ngIf="hasUnread()" class="badge">{{ unreadCount() }}</span>
+            <div *ngIf="showDropdown" class="dropdown-content">
+              <div class="dropdown-header">
+                Notifications
+                <button *ngIf="hasUnread()" (click)="markAllAsRead()">Mark all as read</button>
+              </div>
+              <ul>
+                <li *ngFor="let notification of notifications" (click)="markAsRead(notification)">
+                  <span [class.read]="notification.isRead">{{ notification.message }}</span>
+                </li>
+                <li *ngIf="notifications.length === 0">No notifications.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link nav-hover" (click)="logout()">Logout</a></li>
+        </ng-container>
+
+        <!-- Employer -->
+        <ng-container *ngIf="isLoggedIn() && isEmployer()">
+          <li class="nav-item"><a class="nav-link nav-hover" [routerLink]="['/employer-dashboard']">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link nav-hover" [routerLink]="['/employer/applications']">Applications</a></li>
+          <li class="nav-item"><a class="nav-link nav-hover" [routerLink]="['/employer-profile']">Profile</a></li>
+          <li class="nav-item notification-wrapper" (click)="toggleDropdown()">
+            🔔
+            <span *ngIf="hasUnread()" class="badge">{{ unreadCount() }}</span>
+            <div *ngIf="showDropdown" class="dropdown-content">
+              <div class="dropdown-header">
+                Notifications
+                <button *ngIf="hasUnread()" (click)="markAllAsRead()">Mark all as read</button>
+              </div>
+              <ul>
+                <li *ngFor="let notification of notifications" (click)="markAsRead(notification)">
+                  <span [class.read]="notification.isRead">{{ notification.message }}</span>
+                </li>
+                <li *ngIf="notifications.length === 0">No notifications.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link nav-hover" (click)="logout()">Logout</a></li>
+        </ng-container>
+
+        <!-- Admin -->
+        <ng-container *ngIf="isLoggedIn() && isAdmin()">
+          <li class="nav-item"><a class="nav-link nav-hover" [routerLink]="['/admin-dashboard']">Admin Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link nav-hover" [routerLink]="['/admin-charts']">Charts</a></li>
+          <li class="nav-item"><a class="nav-link nav-hover" [routerLink]="['/admin-profile']">Profile</a></li>
+          <li class="nav-item notification-wrapper" (click)="toggleDropdown()">
+            🔔
+            <span *ngIf="hasUnread()" class="badge">{{ unreadCount() }}</span>
+            <div *ngIf="showDropdown" class="dropdown-content">
+              <div class="dropdown-header">
+                Notifications
+                <button *ngIf="hasUnread()" (click)="markAllAsRead()">Mark all as read</button>
+              </div>
+              <ul>
+                <li *ngFor="let notification of notifications" (click)="markAsRead(notification)">
+                  <span [class.read]="notification.isRead">{{ notification.message }}</span>
+                </li>
+                <li *ngIf="notifications.length === 0">No notifications.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link nav-hover" (click)="logout()">Logout</a></li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</nav>

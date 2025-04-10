@@ -1,0 +1,112 @@
+<!-- 
+
+
+   <div class="container mt-4">
+    <h2 class="mb-4">Your Posted Jobs</h2>
+  
+   
+    <ul class="list-group mb-4">
+      <li *ngFor="let job of jobs" class="list-group-item d-flex justify-content-between align-items-center">
+        <span>
+          <strong>{{ job.title }}</strong> - {{ job.location }}
+        </span>
+        <button class="btn btn-sm btn-primary" (click)="onSelectJob(job.id!)">View Applications</button>
+      </li>
+    </ul>
+  
+    
+    <div *ngIf="applications.length > 0">
+      <h3 class="mb-3">Applications for Selected Job</h3>
+      <ul class="list-group">
+        <li *ngFor="let app of applications" class="list-group-item">
+          <h5>{{ app.jobSeeker.name }}</h5>
+          <p><strong>Email:</strong> {{ app.jobSeeker.email }}</p>
+          <p><strong>Status:</strong> {{ app.status }}</p>
+          <p><strong>Resume:</strong> {{ app.resume }}</p>
+          <p><strong>Cover Letter:</strong> {{ app.coverLetter }}</p>
+          
+          <div class="mt-3">
+            <button class="btn btn-success btn-sm me-2" (click)="approveApplication(app)">Approve</button>
+            <button class="btn btn-danger btn-sm" (click)="rejectApplication(app)">Reject</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+   
+    <div *ngIf="selectedJobId && applications.length === 0">
+      <p class="text-muted">No applications found for this job yet.</p>
+    </div>
+  </div>
+   -->
+
+   <div class="container mt-4">
+    <h2 class="mb-4">Your Posted Jobs</h2>
+  
+    <!-- Job List -->
+    <ul class="list-group mb-4">
+      <li *ngFor="let job of jobs" class="list-group-item d-flex justify-content-between align-items-center">
+        <span>
+          <strong>{{ job.title }}</strong> - {{ job.location }}
+        </span>
+        <button class="btn btn-sm btn-primary" (click)="onSelectJob(job.id!)">
+          <i class="fas fa-eye"></i> View Applications
+        </button>
+      </li>
+    </ul>
+  
+    <!-- Applications List -->
+    <div *ngIf="applications.length > 0">
+      <h3 class="mb-3">Applications for Selected Job</h3>
+      <ul class="list-group">
+        <li *ngFor="let app of applications" class="list-group-item">
+          <h5>{{ app.jobSeeker.name }}</h5>
+          <p><strong>Email:</strong> {{ app.jobSeeker.email }}</p>
+          <!-- <p><strong>Status:</strong> {{ app.status }}</p> -->
+          <p>
+            <strong>Status:</strong>
+            <span 
+              [ngClass]="{
+                'badge-approved': app.status === 'approved',
+                'badge-rejected': app.status === 'rejected',
+                'badge-pending': app.status === 'pending'
+              }">
+              {{ app.status | titlecase }}
+            </span>
+          </p>
+          
+  
+          <!-- Resume Toggle -->
+          <div class="toggle-box">
+            <button class="toggle-btn" (click)="app.showResume = !app.showResume">
+              📄 Resume
+            </button>
+            <p *ngIf="app.showResume">{{ app.resume }}</p>
+          </div>
+  
+          <!-- Cover Letter Toggle -->
+          <div class="toggle-box">
+            <button class="toggle-btn" (click)="app.showCover = !app.showCover">
+              📝 Cover Letter
+            </button>
+            <p *ngIf="app.showCover">{{ app.coverLetter }}</p>
+          </div>
+  
+          <div class="mt-3 d-flex gap-2">
+            <button class="btn btn-success btn-sm" (click)="approveApplication(app)">
+              <i class="fas fa-check"></i> Approve
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="rejectApplication(app)">
+              <i class="fas fa-times"></i> Reject
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- No Applications Message -->
+    <div *ngIf="selectedJobId && applications.length === 0">
+      <p class="no-app-msg">🚫 No applications found for this job yet.</p>
+    </div>
+  </div>
+  

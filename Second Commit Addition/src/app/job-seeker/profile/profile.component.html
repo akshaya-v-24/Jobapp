@@ -1,0 +1,41 @@
+<!-- <h2>My Profile</h2>
+<form>
+  <label>Name:</label>
+  <input [(ngModel)]="profile.name" class="form-control" />
+  
+  <label>Email:</label>
+  <input [(ngModel)]="profile.email" class="form-control" disabled />
+
+  <button (click)="updateProfile()" class="btn btn-primary mt-2">Update</button>
+</form> -->
+
+
+<h2>My Profile</h2>
+<form #profileForm="ngForm">
+  <div class="mb-3">
+    <label for="name">Name:</label>
+    <input [(ngModel)]="profile.name" name="name" id="name" class="form-control" required />
+  </div>
+
+  <div class="mb-3">
+    <label for="email">Email:</label>
+    <input [(ngModel)]="profile.email" name="email" id="email" class="form-control" disabled />
+  </div>
+
+  <div class="mb-3">
+    <label for="password">Password:</label>
+    <input [(ngModel)]="profile.password" name="password" id="password" type="password" class="form-control" required />
+  </div>
+
+  <div class="mb-3">
+    <label for="role">Role:</label>
+    <input [(ngModel)]="profile.role" name="role" id="role" class="form-control" disabled />
+  </div>
+
+  <div class="mb-3">
+    <label for="company">Company (if applicable):</label>
+    <input [(ngModel)]="profile.company" name="company" id="company" class="form-control" />
+  </div>
+
+  <button (click)="updateProfile()" class="btn btn-primary mt-2">Update</button>
+</form>

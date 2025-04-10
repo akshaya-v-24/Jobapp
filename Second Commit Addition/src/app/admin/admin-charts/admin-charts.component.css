@@ -1,0 +1,45 @@
+/* ANALYTICS SECTION STYLING */
+.section {
+    background-color: #0a192f;
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+    margin-top: 40px;
+  }
+  
+  /* Headings */
+  h4, h5 {
+    color: #d4af37;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Chart Container */
+  .row > div {
+    background-color: #1c2b4a;
+    border: 1px solid #d4af37;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .row > div:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px #d4af37;
+  }
+  
+  /* Canvas responsiveness */
+  canvas {
+    max-width: 100%;
+    height: auto !important;
+  }
+  
+  /* Media Query for Small Screens */
+  @media (max-width: 768px) {
+    .row > div {
+      margin-bottom: 20px;
+    }
+  }
+  

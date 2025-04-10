@@ -1,0 +1,53 @@
+<!-- 
+
+   <div class="container">
+    <h2>Register</h2>
+    <form (ngSubmit)="register()">
+      
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="user.name" required name="name" />
+  
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="user.email" required name="email" />
+  
+      <label>Password:</label>
+      <input type="password" [(ngModel)]="user.password" required name="password" />
+  
+      <label>Role:</label>
+      <select [(ngModel)]="user.role" name="role">
+        <option value="JOB_SEEKER">Job Seeker</option>
+        <option value="EMPLOYER">Employer</option>
+      </select>
+  
+      <button type="submit">Register</button>
+      <p *ngIf="errorMessage">{{ errorMessage }}</p>
+    </form>
+  </div>
+   -->
+
+   <div class="container">
+    <h2><i class="fas fa-user-plus"></i> Register</h2>
+  
+    <form (ngSubmit)="register()">
+      
+      <label><i class="fas fa-user"></i> Name:</label>
+      <input type="text" [(ngModel)]="user.name" required name="name" />
+  
+      <label><i class="fas fa-envelope"></i> Email:</label>
+      <input type="email" [(ngModel)]="user.email" required name="email" />
+  
+      <label><i class="fas fa-lock"></i> Password:</label>
+      <input type="password" [(ngModel)]="user.password" required name="password" />
+  
+      <label><i class="fas fa-users"></i> Role:</label>
+      <select [(ngModel)]="user.role" name="role">
+        <option value="JOB_SEEKER">Job Seeker</option>
+        <option value="EMPLOYER">Employer</option>
+      </select>
+  
+      <button type="submit"><i class="fas fa-user-check"></i> Register</button>
+      
+      <p *ngIf="errorMessage">{{ errorMessage }}</p>
+    </form>
+  </div>
+  

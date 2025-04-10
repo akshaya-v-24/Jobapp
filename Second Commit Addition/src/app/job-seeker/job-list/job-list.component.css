@@ -1,0 +1,161 @@
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #0a192f;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+    color: #ffffff;
+  }
+  
+  /* Heading */
+  h2 {
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  /* Filters */
+  .filter-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+    justify-content: center;
+  }
+  
+  .search-input,
+  .filter-select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #d4af37;
+    background-color: #1c2b4a;
+    color: white;
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .search-input::placeholder {
+    color: #aaa;
+  }
+  
+  .search-input:focus,
+  .filter-select:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 5px #d4af37;
+  }
+  
+  /* Job Cards */
+  .job-card {
+    background-color: #112240;
+    padding: 20px;
+    border-left: 4px solid #d4af37;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .job-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+  }
+  
+  .job-card h3 {
+    color: #ffd700;
+    margin-bottom: 10px;
+  }
+  
+  .job-card p {
+    margin: 5px 0;
+    color: #dddddd;
+  }
+  
+  /* Button */
+  .btn-primary {
+    background-color: #d4af37;
+    border: none;
+    color: #0a192f;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 8px 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #f0c94d;
+  }
+  
+  /* Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 25, 47, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+  }
+  
+  .modal-content {
+    background-color: #112240;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    color: white;
+    position: relative;
+  }
+  
+  .modal-content h3 {
+    color: #ffd700;
+    margin-bottom: 20px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #ffd700;
+    cursor: pointer;
+  }
+
+  
+  /* Animation for filter inputs */
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .filter-section input,
+  .filter-section select {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  /* Glowing hover effect for Apply Now button */
+  .btn-primary:hover {
+    background-color: #f0c94d;
+    box-shadow: 0 0 15px #d4af37, 0 0 30px #d4af37;
+    color: #0a192f;
+    transform: scale(1.05);
+  }
+
+  
+  .job-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  

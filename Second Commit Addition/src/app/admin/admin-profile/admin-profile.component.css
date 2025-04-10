@@ -1,0 +1,90 @@
+.container {
+    background-color: #0a192f;
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  /* Headings */
+  h2, h3, h4 {
+    color: #d4af37;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  /* Section */
+  .section {
+    margin-bottom: 40px;
+  }
+  
+  /* Form Styling */
+  form {
+    background-color: #1c2b4a;
+    border: 1px solid #d4af37;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+  }
+  
+  label {
+    color: #d4af37;
+    font-weight: 600;
+  }
+  
+  input.form-control {
+    background-color: #0a192f;
+    border: 1px solid #d4af37;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input.form-control:focus {
+    border-color: #f0c94d;
+    box-shadow: 0 0 8px #d4af37;
+    outline: none;
+  }
+  
+  /* Buttons */
+  .btn {
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #d4af37;
+    color: #0a192f;
+  }
+  
+  .btn-primary:hover {
+    background-color: #f0c94d;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    form {
+      padding: 20px;
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  }
+  input.form-control:hover,
+  input.form-control:focus {
+    box-shadow: 0 0 5px #d4af37;
+  }
+  
+  .btn:hover {
+    box-shadow: 0 0 8px #f0c94d;
+  }
+    

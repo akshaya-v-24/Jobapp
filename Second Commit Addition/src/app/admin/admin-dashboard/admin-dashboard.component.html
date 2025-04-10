@@ -1,0 +1,52 @@
+
+
+   <div class="container mt-4">
+    <h2>👑 Admin Dashboard</h2>
+  
+  
+    <div class="section">
+      <h4>📋 All Users</h4>
+  
+     
+      <div class="d-flex justify-content-between mb-3">
+        <input
+          [(ngModel)]="searchQuery"
+          (input)="applySearchFilter()"
+          class="form-control w-50"
+          placeholder="🔍 Search by email..."
+        />
+        <button class="btn btn-primary" (click)="toggleSortByRole()">
+          Sort by Role {{ sortAscending ? '⬆️' : '⬇️' }}
+        </button>
+      </div>
+  
+      <div *ngIf="filteredUsers.length === 0" class="no-data">No users found.</div>
+      <div *ngFor="let user of filteredUsers" class="card-item">
+        <div><strong>Email:</strong> {{ user.email }}</div>
+        <div><strong>Role:</strong> {{ user.role }}</div>
+        <div>
+          <span [ngClass]="user.active ? 'badge badge-success' : 'badge badge-secondary'">
+            {{ user.active ? 'Active' : 'Inactive' }}
+          </span>
+        </div>
+        <div>
+          <button class="btn btn-danger" (click)="deleteUser(user.id)">🗑️ Delete</button>
+          <button class="btn toggle-btn" (click)="toggleActive(user)">🔁 Toggle</button>
+        </div>
+      </div>
+    </div>
+  
+   
+    <div class="section">
+      <h4>💼 All Jobs</h4>
+      <div *ngIf="jobs.length === 0" class="no-data">No jobs available.</div>
+      <div *ngFor="let job of jobs" class="card-item">
+        <div><strong>Title:</strong> {{ job.title }}</div>
+        <div><strong>Posted By:</strong> {{ job.employer?.email || job.employer?.name || 'N/A' }}</div>
+        <div>
+          <button class="btn btn-danger" (click)="deleteJob(job.id)">🗑️ Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

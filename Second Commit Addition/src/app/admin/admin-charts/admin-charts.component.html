@@ -1,0 +1,34 @@
+<!-- ANALYTICS SECTION -->
+<div class="section mt-5">
+    <h4>📊 Admin Analytics</h4>
+  
+    <div class="row">
+      <!-- Users by Role -->
+      <div class="col-md-4 mb-4">
+        <h5>Users by Role</h5>
+        <canvas baseChart
+          [data]="{ labels: userRoleData.labels, datasets: [{ data: userRoleData.data, backgroundColor: ['#42A5F5', '#66BB6A', '#FFA726'] }] }"
+          [type]="'pie'">
+        </canvas>
+      </div>
+  
+      <!-- Active vs Inactive -->
+      <div class="col-md-4 mb-4">
+        <h5>Active vs Inactive Users</h5>
+        <canvas baseChart
+          [data]="{ labels: ['Active', 'Inactive'], datasets: [{ data: [activeStatusData.active, activeStatusData.inactive], backgroundColor: ['#4CAF50', '#BDBDBD'] }] }"
+          [type]="'doughnut'">
+        </canvas>
+      </div>
+  
+      <!-- Applications per Job -->
+      <div class="col-md-4 mb-4">
+        <h5>Applications per Job</h5>
+        <canvas baseChart
+          [data]="{ labels: applicationsPerJob.labels, datasets: [{ data: applicationsPerJob.data, backgroundColor: '#FF6384', label: 'Applications' }] }"
+          [type]="'bar'">
+        </canvas>
+      </div>
+    </div>
+  </div>
+  
